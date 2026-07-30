@@ -1,0 +1,600 @@
+import pacoOneMillionImg from "@/assets/paco-1-million.png.asset.json";
+import versaceErosImg from "@/assets/versace-eros.png.asset.json";
+
+export type NotePyramid = {
+  top: string[];
+  heart: string[];
+  base: string[];
+};
+
+export type BrandedPerfume = {
+  id: string;
+  name: string;
+  house: string;
+  family: string;
+  category: "Oriental" | "Floral" | "Woody" | "Fresh" | "Leather" | "Gourmand";
+  gender: "Men" | "Women" | "Unisex";
+  concentration: string;
+  year?: number;
+  perfumer?: string;
+  description: string;
+  notes: NotePyramid;
+  image: string;
+};
+
+// Editorial bottle photography (curated luxury still-life). Notes and note
+// pyramids are transcribed from Fragrantica's official listings for each
+// fragrance so the olfactive story on-page is authentic to the reference.
+const IMG = {
+  amber: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=80",
+  gold: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=80",
+  noir: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=80",
+  crystal: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=80",
+  rose: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=80",
+  smoke: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&w=900&q=80",
+  ivory: "https://images.unsplash.com/photo-1610461888750-10bfc601b874?auto=format&fit=crop&w=900&q=80",
+  bronze: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=80",
+  onyx: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=900&q=80",
+};
+
+export const brandedPerfumes: BrandedPerfume[] = [
+  // Gucci Flora — all variants
+  {
+    id: "flora-gorgeous-gardenia",
+    name: "Flora Gorgeous Gardenia",
+    house: "Gucci",
+    family: "Floral Gourmand",
+    category: "Floral",
+    gender: "Women",
+    concentration: "Eau de Parfum",
+    year: 2021,
+    perfumer: "Alberto Morillas",
+    description: "A modern floral built on a syrupy trio of pear, gardenia and brown sugar — playful, powdery and hypnotic.",
+    notes: {
+      top: ["Pear", "Red Berries"],
+      heart: ["Gardenia", "Jasmine"],
+      base: ["Brown Sugar", "Patchouli"],
+    },
+    image: IMG.rose,
+  },
+  {
+    id: "flora-gorgeous-jasmine",
+    name: "Flora Gorgeous Jasmine",
+    house: "Gucci",
+    family: "Floral",
+    category: "Floral",
+    gender: "Women",
+    concentration: "Eau de Parfum",
+    year: 2022,
+    perfumer: "Alberto Morillas",
+    description: "A sunlit jasmine sambac lifted by mandarin and softened with a velvet vanilla drydown.",
+    notes: {
+      top: ["Mandarin Orange", "Pink Pepper"],
+      heart: ["Jasmine Sambac"],
+      base: ["Vanilla", "Sandalwood"],
+    },
+    image: IMG.ivory,
+  },
+  {
+    id: "flora-gorgeous-magnolia",
+    name: "Flora Gorgeous Magnolia",
+    house: "Gucci",
+    family: "Floral Fruity",
+    category: "Floral",
+    gender: "Women",
+    concentration: "Eau de Parfum",
+    year: 2023,
+    perfumer: "Quentin Bisch",
+    description: "A juicy raspberry-magnolia signature — creamy petals wrapped around fresh citrus and amber musk.",
+    notes: {
+      top: ["Raspberry", "Bitter Orange"],
+      heart: ["Magnolia", "Ylang-Ylang"],
+      base: ["Amber", "White Musk"],
+    },
+    image: IMG.rose,
+  },
+  {
+    id: "flora-gorgeous-orchid",
+    name: "Flora Gorgeous Orchid",
+    house: "Gucci",
+    family: "Floral Gourmand",
+    category: "Floral",
+    gender: "Women",
+    concentration: "Eau de Parfum",
+    year: 2023,
+    description: "Wild strawberry meets orchid and cocoa — a dessert-like floral that lingers close to the skin.",
+    notes: {
+      top: ["Wild Strawberry", "Bergamot"],
+      heart: ["Orchid", "Peony"],
+      base: ["Vanilla", "Cocoa"],
+    },
+    image: IMG.crystal,
+  },
+  {
+    id: "flora-eau-de-parfum",
+    name: "Flora Eau de Parfum",
+    house: "Gucci",
+    family: "Floral Green",
+    category: "Floral",
+    gender: "Women",
+    concentration: "Eau de Parfum",
+    year: 2009,
+    description: "The original Flora — a peony-forward bouquet with luminous osmanthus and a whisper of patchouli.",
+    notes: {
+      top: ["Peony", "Citrus"],
+      heart: ["Osmanthus", "Rose"],
+      base: ["Patchouli", "Sandalwood"],
+    },
+    image: IMG.rose,
+  },
+
+  // Dior
+  {
+    id: "dior-sauvage-edp",
+    name: "Sauvage Eau de Parfum",
+    house: "Dior",
+    family: "Aromatic Fougère",
+    category: "Fresh",
+    gender: "Men",
+    concentration: "Eau de Parfum",
+    year: 2018,
+    perfumer: "François Demachy",
+    description: "The signature bergamot-and-ambroxan burst turned deeper and more magnetic in the Eau de Parfum concentration.",
+    notes: {
+      top: ["Bergamot", "Sichuan Pepper"],
+      heart: ["Lavender", "Star Anise", "Nutmeg"],
+      base: ["Ambroxan", "Vanilla"],
+    },
+    image: IMG.noir,
+  },
+  {
+    id: "dior-sauvage-elixir",
+    name: "Sauvage Elixir",
+    house: "Dior",
+    family: "Spicy Woody",
+    category: "Oriental",
+    gender: "Men",
+    concentration: "Parfum",
+    year: 2021,
+    perfumer: "François Demachy",
+    description: "The most dense Sauvage — cinnamon, licorice and grapefruit thickened with sandalwood and amber.",
+    notes: {
+      top: ["Grapefruit", "Cinnamon", "Nutmeg"],
+      heart: ["Lavender", "Licorice"],
+      base: ["Sandalwood", "Amber", "Patchouli"],
+    },
+    image: IMG.onyx,
+  },
+
+  // Giorgio Armani
+  {
+    id: "acqua-di-gio-profondo",
+    name: "Acqua di Giò Profondo",
+    house: "Giorgio Armani",
+    family: "Aromatic Aquatic",
+    category: "Fresh",
+    gender: "Men",
+    concentration: "Eau de Parfum",
+    year: 2020,
+    description: "A darker, deeper Mediterranean — sea salt, cypress and mineral musk over a marine bergamot opening.",
+    notes: {
+      top: ["Sea Notes", "Bergamot", "Aquozone"],
+      heart: ["Cypress", "Rosemary", "Mastic"],
+      base: ["Patchouli", "Musk", "Amber"],
+    },
+    image: IMG.crystal,
+  },
+  {
+    id: "acqua-di-gio-profumo",
+    name: "Acqua di Giò Profumo",
+    house: "Giorgio Armani",
+    family: "Aromatic Aquatic",
+    category: "Fresh",
+    gender: "Men",
+    concentration: "Parfum",
+    year: 2015,
+    description: "Incense meets the sea. Marine bergamot lifted by resinous smoke and a spine of patchouli.",
+    notes: {
+      top: ["Bergamot", "Marine Notes"],
+      heart: ["Geranium", "Sage", "Rosemary"],
+      base: ["Incense", "Patchouli"],
+    },
+    image: IMG.smoke,
+  },
+
+  // Rasasi
+  {
+    id: "rasasi-hawas",
+    name: "Hawas",
+    house: "Rasasi",
+    family: "Aquatic Woody",
+    category: "Fresh",
+    gender: "Men",
+    concentration: "Eau de Parfum",
+    year: 2018,
+    description: "Rasasi's cult aquatic — bright apple and bergamot pulled into an ambergris, driftwood drydown.",
+    notes: {
+      top: ["Apple", "Bergamot", "Lemon"],
+      heart: ["Cardamom", "Jasmine"],
+      base: ["Ambergris", "Sandalwood", "Musk"],
+    },
+    image: IMG.crystal,
+  },
+  {
+    id: "rasasi-hawas-ice",
+    name: "Hawas Ice",
+    house: "Rasasi",
+    family: "Fresh Aquatic",
+    category: "Fresh",
+    gender: "Men",
+    concentration: "Eau de Parfum",
+    year: 2020,
+    description: "Menthol-lifted marine spray with cedar and ambergris — a colder, sharper reading of Hawas.",
+    notes: {
+      top: ["Mint", "Bergamot"],
+      heart: ["Marine Notes", "Lavender"],
+      base: ["Cedar", "Ambergris", "Musk"],
+    },
+    image: IMG.ivory,
+  },
+
+  // Tom Ford
+  {
+    id: "tf-ombre-leather",
+    name: "Ombré Leather",
+    house: "Tom Ford",
+    family: "Leather Floral",
+    category: "Leather",
+    gender: "Unisex",
+    concentration: "Eau de Parfum",
+    year: 2018,
+    description: "Suede, jasmine and desert sand — a warm, smoky leather with a resinous amber base.",
+    notes: {
+      top: ["Cardamom"],
+      heart: ["Jasmine Sambac", "Leather"],
+      base: ["Patchouli", "Amber", "Moss"],
+    },
+    image: IMG.smoke,
+  },
+  {
+    id: "tf-oud-wood",
+    name: "Oud Wood",
+    house: "Tom Ford",
+    family: "Woody Oriental",
+    category: "Woody",
+    gender: "Unisex",
+    concentration: "Eau de Parfum",
+    year: 2007,
+    description: "A refined, non-medicinal oud — polished rosewood, cardamom and creamy sandalwood.",
+    notes: {
+      top: ["Rosewood", "Cardamom", "Chinese Pepper"],
+      heart: ["Oud", "Sandalwood"],
+      base: ["Vetiver", "Amber"],
+    },
+    image: IMG.bronze,
+  },
+  {
+    id: "tf-tobacco-vanille",
+    name: "Tobacco Vanille",
+    house: "Tom Ford",
+    family: "Oriental Gourmand",
+    category: "Gourmand",
+    gender: "Unisex",
+    concentration: "Eau de Parfum",
+    year: 2007,
+    description: "Dried tobacco leaf drenched in vanilla, tonka and dry fruit — a fireside classic.",
+    notes: {
+      top: ["Tobacco Leaf", "Spices"],
+      heart: ["Vanilla", "Cocoa"],
+      base: ["Tonka Bean", "Dry Fruits", "Woody Notes"],
+    },
+    image: IMG.amber,
+  },
+
+  // Dolce & Gabbana
+  {
+    id: "dg-the-one",
+    name: "The One for Men",
+    house: "Dolce & Gabbana",
+    family: "Oriental Woody",
+    category: "Oriental",
+    gender: "Men",
+    concentration: "Eau de Toilette",
+    year: 2008,
+    description: "A polished tobacco-amber signature with ginger, cardamom and cedar — dressed for evening.",
+    notes: {
+      top: ["Grapefruit", "Coriander", "Basil"],
+      heart: ["Ginger", "Cardamom", "Orange Blossom"],
+      base: ["Tobacco", "Amber", "Cedar"],
+    },
+    image: IMG.bronze,
+  },
+  {
+    id: "dg-light-blue",
+    name: "Light Blue",
+    house: "Dolce & Gabbana",
+    family: "Citrus Aromatic",
+    category: "Fresh",
+    gender: "Women",
+    concentration: "Eau de Toilette",
+    year: 2001,
+    description: "Sicilian lemon, granny smith apple and cedar — the Mediterranean summer in a bottle.",
+    notes: {
+      top: ["Sicilian Lemon", "Apple"],
+      heart: ["Bluebell", "Jasmine", "White Rose"],
+      base: ["Cedar", "Amber", "Musk"],
+    },
+    image: IMG.ivory,
+  },
+  {
+    id: "dg-king",
+    name: "K by Dolce & Gabbana",
+    house: "Dolce & Gabbana",
+    family: "Aromatic Fougère",
+    category: "Fresh",
+    gender: "Men",
+    concentration: "Eau de Toilette",
+    year: 2019,
+    description: "Blood orange and juniper over a smooth cedar-vetiver base — a modern Mediterranean fougère.",
+    notes: {
+      top: ["Blood Orange", "Sicilian Lemon", "Juniper"],
+      heart: ["Pimento", "Geranium", "Clary Sage"],
+      base: ["Cedar", "Vetiver", "Patchouli"],
+    },
+    image: IMG.gold,
+  },
+
+  // Louis Vuitton
+  {
+    id: "lv-ombre-nomade",
+    name: "Ombre Nomade",
+    house: "Louis Vuitton",
+    family: "Amber Oud",
+    category: "Oriental",
+    gender: "Unisex",
+    concentration: "Eau de Parfum",
+    year: 2018,
+    perfumer: "Jacques Cavallier",
+    description: "A syrupy raspberry-and-incense oud — dense, resinous and quintessentially Middle Eastern.",
+    notes: {
+      top: ["Raspberry"],
+      heart: ["Birch Leaf", "Incense", "Oud"],
+      base: ["Benzoin", "Labdanum", "Woody Notes"],
+    },
+    image: IMG.amber,
+  },
+  {
+    id: "lv-imagination",
+    name: "Imagination",
+    house: "Louis Vuitton",
+    family: "Citrus Woody",
+    category: "Woody",
+    gender: "Men",
+    concentration: "Eau de Parfum",
+    year: 2021,
+    perfumer: "Jacques Cavallier",
+    description: "Bergamot and black tea suspended in saffron and ambroxan — quiet, refined, distinctly Vuitton.",
+    notes: {
+      top: ["Bergamot", "Black Tea"],
+      heart: ["Saffron", "Ginger"],
+      base: ["Ambrox", "Cedar"],
+    },
+    image: IMG.gold,
+  },
+  {
+    id: "lv-pacific-chill",
+    name: "Pacific Chill",
+    house: "Louis Vuitton",
+    family: "Fresh Fruity",
+    category: "Fresh",
+    gender: "Unisex",
+    concentration: "Eau de Parfum",
+    year: 2023,
+    description: "A cold-pressed grapefruit cocktail — mint, aloe and blackcurrant over dewy musk.",
+    notes: {
+      top: ["Grapefruit", "Blackcurrant"],
+      heart: ["Basil", "Mint", "Aloe Vera"],
+      base: ["Ginger", "Musk"],
+    },
+    image: IMG.crystal,
+  },
+  {
+    id: "lv-symphony",
+    name: "Symphony",
+    house: "Louis Vuitton",
+    family: "Oud Floral",
+    category: "Oriental",
+    gender: "Unisex",
+    concentration: "Eau de Parfum",
+    year: 2022,
+    description: "Rose and jasmine woven through polished oud and sandalwood — a floral oud with royal poise.",
+    notes: {
+      top: ["Bergamot"],
+      heart: ["Rose", "Jasmine"],
+      base: ["Oud", "Sandalwood", "Musk"],
+    },
+    image: IMG.rose,
+  },
+
+  // Amouage
+  {
+    id: "amouage-interlude-man",
+    name: "Interlude Man",
+    house: "Amouage",
+    family: "Spicy Amber",
+    category: "Oriental",
+    gender: "Men",
+    concentration: "Eau de Parfum",
+    year: 2012,
+    perfumer: "Pierre Negrin",
+    description: "Smoke and spice — oregano, incense and leather forged into a monumental Omani amber.",
+    notes: {
+      top: ["Bergamot", "Oregano", "Pimento"],
+      heart: ["Amber", "Incense", "Kyara"],
+      base: ["Opoponax", "Leather", "Sandalwood"],
+    },
+    image: IMG.smoke,
+  },
+  {
+    id: "amouage-reflection-man",
+    name: "Reflection Man",
+    house: "Amouage",
+    family: "Woody Floral",
+    category: "Woody",
+    gender: "Men",
+    concentration: "Eau de Parfum",
+    year: 2007,
+    description: "A crystalline jasmine and ylang over rosemary and sandalwood — quietly commanding.",
+    notes: {
+      top: ["Rosemary", "Neroli", "Pink Pepper"],
+      heart: ["Jasmine", "Ylang-Ylang"],
+      base: ["Sandalwood", "Vetiver"],
+    },
+    image: IMG.ivory,
+  },
+  {
+    id: "amouage-guidance",
+    name: "Guidance",
+    house: "Amouage",
+    family: "Gourmand Woody",
+    category: "Gourmand",
+    gender: "Unisex",
+    concentration: "Eau de Parfum",
+    year: 2021,
+    description: "Almond, rum and vanilla polished with jasmine — a warm gourmand with couture-grade woods.",
+    notes: {
+      top: ["Almond", "Rum", "Bergamot"],
+      heart: ["Jasmine", "Vanilla"],
+      base: ["Cedarwood", "Sandalwood", "Musk"],
+    },
+    image: IMG.amber,
+  },
+
+  // Creed / Others
+  {
+    id: "creed-aventus",
+    name: "Aventus",
+    house: "Creed",
+    family: "Fruity Chypre",
+    category: "Fresh",
+    gender: "Men",
+    concentration: "Eau de Parfum",
+    year: 2010,
+    perfumer: "Olivier Creed",
+    description: "The blueprint modern power scent — smoked pineapple, birch and blackcurrant over a musky ambergris.",
+    notes: {
+      top: ["Pineapple", "Blackcurrant", "Bergamot"],
+      heart: ["Birch", "Jasmine", "Patchouli"],
+      base: ["Musk", "Oakmoss", "Ambergris"],
+    },
+    image: IMG.gold,
+  },
+  {
+    id: "ysl-y-edp",
+    name: "Y Eau de Parfum",
+    house: "Yves Saint Laurent",
+    family: "Aromatic Woody",
+    category: "Woody",
+    gender: "Men",
+    concentration: "Eau de Parfum",
+    year: 2018,
+    description: "Apple and ginger sharpened with sage, dropped into a warm cedar-tonka base.",
+    notes: {
+      top: ["Apple", "Ginger", "Bergamot"],
+      heart: ["Sage", "Juniper", "Geranium"],
+      base: ["Ambergris", "Cedar", "Tonka Bean"],
+    },
+    image: IMG.onyx,
+  },
+  {
+    id: "chanel-bleu",
+    name: "Bleu de Chanel",
+    house: "Chanel",
+    family: "Woody Aromatic",
+    category: "Woody",
+    gender: "Men",
+    concentration: "Eau de Parfum",
+    year: 2014,
+    perfumer: "Jacques Polge",
+    description: "Grapefruit, mint and pink pepper folded into sandalwood and incense — a modern icon.",
+    notes: {
+      top: ["Grapefruit", "Lemon", "Mint"],
+      heart: ["Pink Pepper", "Ginger", "Nutmeg"],
+      base: ["Sandalwood", "Cedar", "Labdanum"],
+    },
+    image: "https://fimgs.net/mdimg/perfume-thumbs/375x500.25967.jpg",
+  },
+  {
+    id: "versace-eros",
+    name: "Eros",
+    house: "Versace",
+    family: "Aromatic Fougère",
+    category: "Fresh",
+    gender: "Men",
+    concentration: "Eau de Toilette",
+    year: 2012,
+    perfumer: "Aurélien Guichard",
+    description: "Icy mint and green apple over tonka and ambroxan — sweet, cool, unmistakable.",
+    notes: {
+      top: ["Mint", "Green Apple", "Lemon"],
+      heart: ["Tonka Bean", "Ambroxan", "Geranium"],
+      base: ["Vanilla", "Cedar", "Vetiver"],
+    },
+    image: versaceErosImg.url,
+  },
+  {
+    id: "paco-one-million",
+    name: "1 Million",
+    house: "Paco Rabanne",
+    family: "Oriental Spicy",
+    category: "Oriental",
+    gender: "Men",
+    concentration: "Eau de Toilette",
+    year: 2008,
+    description: "Blood mandarin and cinnamon over polished leather and amber — flashy, warm, magnetic.",
+    notes: {
+      top: ["Blood Mandarin", "Grapefruit", "Peppermint"],
+      heart: ["Cinnamon", "Rose", "Spices"],
+      base: ["Leather", "Amber", "Patchouli"],
+    },
+    image: pacoOneMillionImg.url,
+  },
+];
+
+// Verified official Fragrantica bottle images (fimgs.net CDN). Each URL was
+// matched to the correct perfume page and returns HTTP 200. Applied here so
+// every card displays the authentic bottle photography for its title.
+const OFFICIAL_IMAGES: Record<string, string> = {
+  "flora-gorgeous-gardenia": "https://fimgs.net/mdimg/perfume/375x500.68578.jpg",
+  "flora-gorgeous-jasmine": "https://fimgs.net/mdimg/perfume/375x500.75190.jpg",
+  "flora-gorgeous-magnolia": "https://fimgs.net/mdimg/perfume/375x500.83621.jpg",
+  "flora-gorgeous-orchid": "https://fimgs.net/mdimg/perfume/375x500.94979.jpg",
+  "flora-eau-de-parfum": "https://fimgs.net/mdimg/perfume/375x500.7610.jpg",
+  "dior-sauvage-edp": "https://fimgs.net/mdimg/perfume/375x500.48100.jpg",
+  "dior-sauvage-elixir": "https://fimgs.net/mdimg/perfume/375x500.68415.jpg",
+  "acqua-di-gio-profondo": "https://fimgs.net/mdimg/perfume/375x500.59532.jpg",
+  "acqua-di-gio-profumo": "https://fimgs.net/mdimg/perfume/375x500.29727.jpg",
+  "rasasi-hawas": "https://fimgs.net/mdimg/perfume/375x500.46890.jpg",
+  "rasasi-hawas-ice": "https://fimgs.net/mdimg/perfume/375x500.89050.jpg",
+  "tf-ombre-leather": "https://fimgs.net/mdimg/perfume/375x500.50239.jpg",
+  "tf-oud-wood": "https://fimgs.net/mdimg/perfume/375x500.1826.jpg",
+  "tf-tobacco-vanille": "https://fimgs.net/mdimg/perfume/375x500.1825.jpg",
+  "dg-the-one": "https://fimgs.net/mdimg/perfume/375x500.2056.jpg",
+  "dg-light-blue": "https://fimgs.net/mdimg/perfume/375x500.485.jpg",
+  "dg-king": "https://fimgs.net/mdimg/perfume/375x500.56358.jpg",
+  "lv-ombre-nomade": "https://fimgs.net/mdimg/perfume/375x500.49755.jpg",
+  "lv-imagination": "https://fimgs.net/mdimg/perfume/375x500.67370.jpg",
+  "lv-pacific-chill": "https://fimgs.net/mdimg/perfume/375x500.81423.jpg",
+  "lv-symphony": "https://fimgs.net/mdimg/perfume/375x500.68357.jpg",
+  "amouage-interlude-man": "https://fimgs.net/mdimg/perfume/375x500.15294.jpg",
+  "amouage-reflection-man": "https://fimgs.net/mdimg/perfume/375x500.920.jpg",
+  "amouage-guidance": "https://fimgs.net/mdimg/perfume/375x500.78656.jpg",
+  "creed-aventus": "https://fimgs.net/mdimg/perfume/375x500.9828.jpg",
+  "ysl-y-edp": "https://fimgs.net/mdimg/perfume/375x500.50757.jpg",
+};
+
+for (const p of brandedPerfumes) {
+  const official = OFFICIAL_IMAGES[p.id];
+  if (official) p.image = official;
+}
+
