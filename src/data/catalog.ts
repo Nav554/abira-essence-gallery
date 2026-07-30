@@ -1,9 +1,9 @@
-import sp5 from "@/assets/speaker-5.png.asset.json";
-import sp6 from "@/assets/speaker-6.png.asset.json";
-import sp7 from "@/assets/speaker-7.png.asset.json";
-import sp8 from "@/assets/speaker-8.png.asset.json";
-import sp9 from "@/assets/speaker-9.png.asset.json";
-import sp10 from "@/assets/speaker-10.png.asset.json";
+const sp5 = "/images/speaker-5.png";
+const sp6 = "/images/speaker-6.png";
+const sp7 = "/images/speaker-7.png";
+const sp8 = "/images/speaker-8.png";
+const sp9 = "/images/speaker-9.png";
+const sp10 = "/images/speaker-10.png";
 
 export type Product = {
   id: string;
@@ -61,11 +61,11 @@ export type Speaker = {
 
 
 export const speakers: Speaker[] = [
-  { id: "jbl-charge", brand: "JBL", model: "Charge Series", tagline: "Signature deep bass, built to travel.", features: ["Waterproof", "Powerbank", "Wireless"], image: sp5.url },
-  { id: "jbl-boombox", brand: "JBL", model: "Boombox Series", tagline: "Room-filling sound with iconic style.", features: ["Massive Bass", "24hr Playtime", "Party Boost"], image: sp6.url },
-  { id: "haino-teko-mega", brand: "HAINO TEKO", model: "Mega Series", tagline: "Bold, thunderous sound for every gathering.", features: ["LED Lights", "Karaoke", "Mic Included"], image: sp7.url },
-  { id: "haino-teko-pro", brand: "HAINO TEKO", model: "Pro Wireless", tagline: "Rich acoustics with premium build.", features: ["Bluetooth 5.0", "USB / SD", "Remote"], image: sp8.url },
-  { id: "calus-tower", brand: "CALUS", model: "Tower Speaker", tagline: "Statement sound with striking presence.", features: ["Tower Design", "DJ Effects", "FM Radio"], image: sp9.url },
-  { id: "calus-portable", brand: "CALUS", model: "Portable Pro", tagline: "Take luxury sound anywhere.", features: ["Rechargeable", "Bluetooth", "Aux/USB"], image: sp10.url },
+  { id: "jbl-charge", brand: "JBL", model: "Charge Series", tagline: "Signature deep bass, built to travel.", features: ["Waterproof", "Powerbank", "Wireless"], image: sp5 },
+  { id: "jbl-boombox", brand: "JBL", model: "Boombox Series", tagline: "Room-filling sound with iconic style.", features: ["Massive Bass", "24hr Playtime", "Party Boost"], image: sp6 },
+  { id: "haino-teko-mega", brand: "HAINO TEKO", model: "Mega Series", tagline: "Bold, thunderous sound for every gathering.", features: ["LED Lights", "Karaoke", "Mic Included"], image: sp7 },
+  { id: "haino-teko-pro", brand: "HAINO TEKO", model: "Pro Wireless", tagline: "Rich acoustics with premium build.", features: ["Bluetooth 5.0", "USB / SD", "Remote"], image: sp8 },
+  { id: "calus-tower", brand: "CALUS", model: "Tower Speaker", tagline: "Statement sound with striking presence.", features: ["Tower Design", "DJ Effects", "FM Radio"], image: sp9 },
+  { id: "calus-portable", brand: "CALUS", model: "Portable Pro", tagline: "Take luxury sound anywhere.", features: ["Rechargeable", "Bluetooth", "Aux/USB"], image: sp10 },
 ];
 

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, SectionTitle } from "@/components/Reveal";
-import bottleImage from "@/assets/abira-hero-bottle.png.asset.json";
+const bottleImage = "/images/abira-hero-bottle.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -26,7 +26,7 @@ function About() {
                  style={{ background: "radial-gradient(circle, oklch(0.82 0.14 85 / 0.3), transparent 65%)" }} />
             <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] border border-primary/30 animate-float gold-glow">
               <img
-                src={bottleImage.url}
+                src={bottleImage}
                 alt="Abira Fragrance premium inspired perfume bottle"
                 className="h-full w-full object-cover"
                 loading="lazy"

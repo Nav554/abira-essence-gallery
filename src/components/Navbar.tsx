@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { brand } from "@/data/brand";
-import logo from "@/assets/abira-logo.png.asset.json";
+const logo = "/images/abira-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -40,7 +40,7 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
         <Link to="/" className="group flex items-center gap-3">
           <span className="grid h-16 w-16 place-items-center overflow-hidden rounded-full border-2 border-primary/50 bg-background/70 gold-glow sm:h-20 sm:w-20">
-            <img src={logo.url} alt="Abira Fragrances logo" className="h-full w-full object-cover" />
+            <img src={logo} alt="Abira Fragrances logo" className="h-full w-full object-cover" />
           </span>
           <span className="font-serif text-lg tracking-[0.28em] text-gold-gradient sm:text-2xl">
             {brand.short}

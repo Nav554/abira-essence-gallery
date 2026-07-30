@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { brand } from "@/data/brand";
-import logo from "@/assets/abira-logo.png.asset.json";
+const logo = "/images/abira-logo.png";
 
 
 export function Footer() {
@@ -11,7 +11,7 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <span className="grid h-12 w-12 place-items-center overflow-hidden rounded-full border border-primary/40 bg-background/60">
-              <img src={logo.url} alt="Abira Fragrances logo" className="h-full w-full object-cover" />
+              <img src={logo} alt="Abira Fragrances logo" className="h-full w-full object-cover" />
             </span>
             <span className="font-serif text-lg tracking-[0.3em] text-gold-gradient">
               {brand.short}
