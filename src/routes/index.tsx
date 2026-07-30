@@ -6,9 +6,9 @@ import { Reveal, SectionTitle } from "@/components/Reveal";
 import { Particles } from "@/components/Visuals";
 import { brand } from "@/data/brand";
 import { products } from "@/data/catalog";
-import heroImage from "@/assets/abira-hero.png.asset.json";
-import bottleImage from "@/assets/abira-hero-bottle.png.asset.json";
-import courtyardImage from "@/assets/abira-courtyard.png.asset.json";
+const heroImage = "/images/abira-hero.png";
+const bottleImage = "/images/abira-hero-bottle.png";
+const courtyardImage = "/images/abira-courtyard.png";
 
 
 export const Route = createFileRoute("/")({
@@ -266,7 +266,7 @@ function Hero() {
             className="relative h-full w-full overflow-hidden rounded-[2.5rem] border border-primary/30 animate-pulse-gold"
           >
             <img
-              src={heroImage.url}
+              src={heroImage}
               alt="Abira Fragrance luxury perfume bottle with oriental gold ornament"
               className="h-full w-full object-cover"
               loading="eager"
@@ -396,7 +396,7 @@ function Featured() {
                   transition={{ duration: 0.6 }}
                   className="relative h-60 w-44 overflow-hidden rounded-2xl bg-gradient-to-b from-primary/5 to-background/60"
                 >
-                  <img src={bottleImage.url} alt={`Abira bottle inspired by ${p.inspiredBy}`} className="h-full w-full object-contain p-2 transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+                  <img src={bottleImage} alt={`Abira bottle inspired by ${p.inspiredBy}`} className="h-full w-full object-contain p-2 transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                 </motion.div>
               </div>
               <p className="text-[10px] uppercase tracking-[0.3em] text-primary">Inspired By</p>
@@ -494,7 +494,7 @@ function InstagramStrip() {
             className="group relative aspect-square overflow-hidden rounded-2xl glass"
           >
             <img
-              src={[heroImage.url, bottleImage.url, courtyardImage.url][i % 3]}
+              src={[heroImage, bottleImage, courtyardImage][i % 3]}
               alt="Abira Fragrance atelier"
               className="h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-110"
               loading="lazy"

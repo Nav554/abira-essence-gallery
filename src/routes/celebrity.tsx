@@ -4,7 +4,7 @@ import { MessageCircle, Star, Sparkles } from "lucide-react";
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { brand } from "@/data/brand";
 import { celebs } from "@/data/celebrities";
-import bottleImage from "@/assets/abira-hero-bottle.png.asset.json";
+const bottleImage = "/images/abira-hero-bottle.png";
 
 
 export const Route = createFileRoute("/celebrity")({
@@ -51,7 +51,7 @@ function CelebrityPerfumes() {
             >
               <div className="relative h-32 w-24 shrink-0 overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-b from-primary/5 to-background/60">
                 <img
-                  src={bottleImage.url}
+                  src={bottleImage}
                   alt={`Abira inspired bottle for ${c.name}`}
                   className="h-full w-full object-contain p-2 transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"

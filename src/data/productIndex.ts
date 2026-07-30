@@ -2,8 +2,8 @@ import { products } from "./catalog";
 import { brandedPerfumes } from "./branded";
 import { celebs } from "./celebrities";
 import { brand } from "./brand";
-import inspiredBottle from "@/assets/abira-inspired-bottle.png.asset.json";
-import heroBottle from "@/assets/abira-hero-bottle.png.asset.json";
+const inspiredBottle = "/images/abira-inspired-bottle.png";
+const heroBottle = "/images/abira-hero-bottle.png";
 
 export type ProductKind = "inspired" | "branded" | "celebrity";
 
@@ -51,7 +51,7 @@ export function getProduct(kind: string, id: string): ProductDetail | null {
       id: p.id,
       name: `Abira Inspired by ${p.inspiredBy}`,
       brandName: brand.name,
-      image: inspiredBottle.url,
+      image: inspiredBottle,
       inspiration: p.inspiredBy,
       family: p.family,
       flatNotes: p.notes,
@@ -99,7 +99,7 @@ export function getProduct(kind: string, id: string): ProductDetail | null {
       id: c.id,
       name: c.name,
       brandName: brand.name,
-      image: heroBottle.url,
+      image: heroBottle,
       inspiration: c.perfumes.join(" + "),
       flatNotes: c.notes ?? c.perfumes,
       description: c.description,

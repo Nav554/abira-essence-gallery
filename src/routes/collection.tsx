@@ -5,7 +5,7 @@ import { Search, Sparkles, MessageCircle } from "lucide-react";
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { products } from "@/data/catalog";
 import { brand } from "@/data/brand";
-import bottleAsset from "@/assets/abira-inspired-bottle.png.asset.json";
+const bottleAsset = "/images/abira-inspired-bottle.png";
 
 export const Route = createFileRoute("/collection")({
   head: () => ({
@@ -101,7 +101,7 @@ function Collection() {
             <Link to="/product/$kind/$id" params={{ kind: "inspired", id: p.id }} className="block">
               <div className="mb-6 flex justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-background/40 to-background/80">
                 <img
-                  src={bottleAsset.url}
+                  src={bottleAsset}
                   alt={`Abira fragrance inspired by ${p.inspiredBy}`}
                   loading="lazy"
                   className="h-64 w-auto object-contain transition-transform duration-700 group-hover:scale-110"

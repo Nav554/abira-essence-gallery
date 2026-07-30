@@ -1,5 +1,5 @@
-import pacoOneMillionImg from "@/assets/paco-1-million.png.asset.json";
-import versaceErosImg from "@/assets/versace-eros.png.asset.json";
+const pacoOneMillionImg = "/images/paco-1-million.png";
+const versaceErosImg = "/images/versace-eros.png";
 
 export type NotePyramid = {
   top: string[];
@@ -540,7 +540,7 @@ export const brandedPerfumes: BrandedPerfume[] = [
       heart: ["Tonka Bean", "Ambroxan", "Geranium"],
       base: ["Vanilla", "Cedar", "Vetiver"],
     },
-    image: versaceErosImg.url,
+    image: versaceErosImg,
   },
   {
     id: "paco-one-million",
@@ -557,7 +557,7 @@ export const brandedPerfumes: BrandedPerfume[] = [
       heart: ["Cinnamon", "Rose", "Spices"],
       base: ["Leather", "Amber", "Patchouli"],
     },
-    image: pacoOneMillionImg.url,
+    image: pacoOneMillionImg,
   },
 ];
 
