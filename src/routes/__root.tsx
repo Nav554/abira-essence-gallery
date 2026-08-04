@@ -83,8 +83,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#0a0a0a" },
       { name: "twitter:title", content: "Abira Fragrances — Luxury Perfumes Hand-Blended in Dubai" },
       { name: "twitter:description", content: "Hand-blended luxury perfumes from Ayal Nasir, Dubai. Oud, amber, rose and musk drawn from the world's most storied fragrances. Bottles from AED 35 to AED 100." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/240c3e76-bf98-4052-8cfc-9429784934d6/id-preview-8d82a2cb--78dc28d0-da30-4b07-ae40-48b0c125229e.lovable.app-1784542831539.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/240c3e76-bf98-4052-8cfc-9429784934d6/id-preview-8d82a2cb--78dc28d0-da30-4b07-ae40-48b0c125229e.lovable.app-1784542831539.png" },
+      { property: "og:image", content: "https://abira-essence-gallery.lovable.app/images/abira-logo.png" },
+      { name: "twitter:image", content: "https://abira-essence-gallery.lovable.app/images/abira-logo.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
